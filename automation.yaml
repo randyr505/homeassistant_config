@@ -1,0 +1,13 @@
+- id: '1549593858581'
+  alias: Notify Open Garage
+  trigger:
+  - payload: 'ON'
+    platform: mqtt
+    topic: cmnd/garage/POWER
+  condition: []
+  action:
+  - delay: 00:00:01
+  - data:
+      payload: 'OFF'
+      topic: cmnd/garage/POWER
+    service: mqtt.publish

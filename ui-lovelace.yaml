@@ -1,0 +1,95 @@
+title: SmartHouse
+theme: dark-mode
+
+views:
+
+  # Home 
+  - icon: mdi:home-assistant
+    title: Home
+    cards:
+      - type: entities
+        title: Sprinklers
+        show_header_toggle: true
+        entities:
+          - entity: switch.garden_plus_right_back_yard
+            name: Garden
+          - switch.side_yard
+          - switch.right_front_yard
+          - switch.front_flower_beds
+          - switch.left_front_yard
+          - switch.right_back_yard
+          - switch.back_yard_left
+          - switch.left_middle_back_yard
+
+      - type: glance
+        title: Outside Conditions
+        entities:
+          - sensor.outdoor_temperature
+          - sensor.outdoor_humidity
+          - sensor.weather
+
+      - type: glance
+        title: Doors
+        entities:
+          - cover.front_door
+          - cover.garage_door
+          - cover.small_garage_door
+
+      - type: glance
+        title: Kitchen
+        entities:
+          - switch.kitchen_island
+          - switch.kitchen_spot
+
+
+      - type: entities
+        title: Containers
+        entities:
+          - entity: switch.ha_container
+            name: HA
+          - entity: switch.mqtt_container
+            name: MQTT
+          - entity: switch.influxdb_container
+            name: Influxdb
+          - entity: switch.tasmoadmin_container
+            name: Tasmoadmin
+          - entity: switch.grafana_container
+            name: Grafana
+          - entity: switch.netdata_container
+            name: Netdata
+        state_filter:
+          - "on"
+
+      - type: glance
+        title: Media
+        entities:
+          - media_player.kitchen_home
+          - media_player.lr
+          - media_player.master_bedroom_speaker
+          - media_player.office_speaker
+          - media_player.bose
+
+  # Outside
+  - title: Outside
+    path: Outside
+    theme: dark-mode
+    cards:
+      - type: glance
+        title: Outside Conditions
+        entities:
+          - sensor.outdoor_temperature
+          - sensor.outdoor_humidity
+          - sensor.weather
+
+      - type: picture-entity
+        entity: camera.weather_radar
+
+  # Weather
+  - icon: mdi:weather-pouring
+    title: Weather
+    cards:
+      - type: weather-forecast
+        entity: weather.darksky
+      - type: weather-forecast
+        entity: weather.openweathermap
+

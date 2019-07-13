@@ -1,0 +1,21 @@
+- platform: mqtt
+  name: "Garage Door"
+  state_topic: "stat/alarmsensors/POWER"
+  command_topic: "cmnd/garage/POWER"
+  payload_open: "ON"
+  payload_close: "OFF"
+  payload_stop: "ON"
+  state_open: "OFF"
+  state_closed: "ON"
+  optimistic: false
+
+- platform: mqtt
+  name: "Small Garage Door"
+  state_topic: "stat/alarmsensors/POWER2"
+  command_topic: "cmnd/smallgarage/POWER"
+  payload_open: "ON"
+  payload_close: "OFF"
+  payload_stop: "ON"
+  state_open: "OFF"
+  state_closed: "ON"
+  optimistic: false

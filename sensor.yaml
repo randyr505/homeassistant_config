@@ -1,0 +1,17 @@
+- platform: mqtt
+  name: "Outdoor Temperature"
+  state_topic: "tele/OutdoorTemp/SENSOR"
+  unit_of_measurement: "°F"
+  value_template: "{{ value_json.AM2301.Temperature }}"
+
+- platform: mqtt
+  name: "Outdoor Humidity"
+  state_topic: "tele/OutdoorTemp/SENSOR"
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.AM2301.Humidity }}"
+
+- platform: openweathermap
+  name: "Forecast"
+  api_key: !secret openweather_api_key
+  monitored_conditions:
+    - weather

@@ -1,0 +1,132 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 0
+  unit_system: imperial
+  time_zone: America/Chicago
+  customize: !include customize.yaml
+  #auth_providers:
+  #- type: legacy_api_password
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api_key
+
+  - platform: openweathermap
+    api_key: !secret openweather_api_key
+
+# Enables the frontend
+frontend:
+  #themes: !include_dir_merger_named themes/
+
+# Enables configuration UI
+config:
+
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.smartthings: debug
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - directv
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+lovelace:
+  mode: yaml
+
+# Includes
+automation: !include automation.yaml
+camera: !include camera.yaml
+cover: !include cover.yaml
+group: !include group.yaml
+light: !include light.yaml
+panel_iframe: !include panel_iframe.yaml
+script: !include script.yaml
+sensor: !include sensor.yaml
+switch: !include switch.yaml
+
+
+# Text to speech
+tts:
+  - platform: google_translate
+    service_name: google_say
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  base_url: !secret base_url
+  #use_x_forwarded_for: true
+  #ip_ban_enabled: True
+  #login_attempts_threshold: 3
+
+mqtt:
+  broker: localhost
+  username: !secret mqtt_user
+  password: !secret mqtt_password
+
+ifttt:
+  key: !secret ifttt_key
+
+system_health:
+
+influxdb:
+  host: !secret docker_ip
+  include:
+    domains:
+      - sensor
+
+rachio:
+  api_key: !secret rachio_key
+
+# Variables
+variable:
+  var_docker_ip:
+    value: !secret docker_ip
+  var_influxdb_ip:
+    value: !secret docker_ip
+  var_dockermon_ip:
+    value: !secret docker_ip
+  var_configurator_port:
+    value: !secret configurator_port
+  var_dockermon_port:
+    value: !secret dockermon_port
+  var_influxdb_port:
+    value: !secret influxdb_port
+  var_grafana_port:
+    value: !secret grafana_port
+  var_netdata_port:
+    value: !secret netdata_port
+  var_tileboard_port:
+    value: !secret tileboard_port
+  var_nodered_port:
+    value: !secret nodered_port
+  var_tasmoadmin_port:
+    value: !secret tasmoadmin_port
+  var_configurator_url:
+    value: "http://{{ variable.var_docker_ip.value }}:{{ variable.var_configurator_port.value }}"
+  var_dockermon_ha:
+    value: "http://{{ variable.var_docker_ip.state }}:{{ variable.var_dockermon_port.state }}/container/ha"

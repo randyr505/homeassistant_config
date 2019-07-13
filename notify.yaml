@@ -1,0 +1,45 @@
+#
+# Example configuration.yaml entry
+  - name: alert_randy
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: !secret r_gmail
+    encryption: starttls
+    username: !secret r_gmail
+    password: !secret gmail_pw
+    recipient:
+      - !secret r_gmail
+    sender_name: My Home Assistant
+
+  - name: alert_jeanette
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: !secret r_gmail
+    encryption: starttls
+    username: !secret r_gmail
+    password: !secret gmail_pw
+    recipient:
+      - !secret j_gmail
+    sender_name: My Home Assistant
+
+  - name: alert_us
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: !secret r_gmail
+    encryption: starttls
+    username: !secret r_gmail
+    password: !secret gmail_pw
+    recipient:
+      - !secret r_gmail
+      - !secret j_gmail
+    sender_name: My Home Assistant
+
+  - platform: lannouncer
+    name: office_lannouncer
+    host: !secret docker_ip
