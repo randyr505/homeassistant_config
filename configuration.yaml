@@ -102,31 +102,37 @@ influxdb:
 rachio:
   api_key: !secret rachio_key
 
+zwave:
+  usb_path: /dev/ttyACM0
+  debug: true
+  network_key: !secret zwave_network_key
+  device_config: !include zwave_device_config.yaml
+
 # Variables
-variable:
-  var_docker_ip:
-    value: !secret docker_ip
-  var_influxdb_ip:
-    value: !secret docker_ip
-  var_dockermon_ip:
-    value: !secret docker_ip
-  var_configurator_port:
-    value: !secret configurator_port
-  var_dockermon_port:
-    value: !secret dockermon_port
-  var_influxdb_port:
-    value: !secret influxdb_port
-  var_grafana_port:
-    value: !secret grafana_port
-  var_netdata_port:
-    value: !secret netdata_port
-  var_tileboard_port:
-    value: !secret tileboard_port
-  var_nodered_port:
-    value: !secret nodered_port
-  var_tasmoadmin_port:
-    value: !secret tasmoadmin_port
-  var_configurator_url:
-    value: "http://{{ variable.var_docker_ip.value }}:{{ variable.var_configurator_port.value }}"
-  var_dockermon_ha:
-    value: "http://{{ variable.var_docker_ip.state }}:{{ variable.var_dockermon_port.state }}/container/ha"
+#variable:
+#var_docker_ip:
+#value: !secret docker_ip
+#var_influxdb_ip:
+#value: !secret docker_ip
+#var_dockermon_ip:
+#value: !secret docker_ip
+    #var_configurator_port:
+    #value: !secret configurator_port
+    #var_dockermon_port:
+    #value: !secret dockermon_port
+    #var_influxdb_port:
+    #value: !secret influxdb_port
+    #var_grafana_port:
+    #value: !secret grafana_port
+    #var_netdata_port:
+    #value: !secret netdata_port
+    #var_tileboard_port:
+    #value: !secret tileboard_port
+    #var_nodered_port:
+    #value: !secret nodered_port
+    #var_tasmoadmin_port:
+    #value: !secret tasmoadmin_port
+    #var_configurator_url:
+    #value: "http://{{ variable.var_docker_ip.value }}:{{ variable.var_configurator_port.value }}"
+    #var_dockermon_ha:
+    #value: "http://{{ variable.var_docker_ip.state }}:{{ variable.var_dockermon_port.state }}/container/ha"

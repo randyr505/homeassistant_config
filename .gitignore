@@ -1,8 +1,12 @@
 .DS_Store
+.HA_VERSION
 .uuid
 .storage
-*.db
+*.db*
 *.log
+*.sqlite
+*.xml
+OZW_Log.txt
 deps
 harmony*
 ip_bans.yaml
