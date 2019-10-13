@@ -13,9 +13,11 @@
     view: yes
     control: hidden
     entities:
-      - cover.front_door
       - cover.garage_door
-      - cover.small_garage_door
+      - cover.single_garage_door
+      - cover.patio_door
+      - cover.garage_entrance_door
+      - cover.front_door
 
   kitchen_view:
     name: Kitchen

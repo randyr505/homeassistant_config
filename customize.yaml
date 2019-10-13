@@ -17,9 +17,17 @@ cover.garage_door:
   device_class: garage
   friendly_name: Garage Door
 
-cover.small_garage_door:
+cover.single_garage_door:
   device_class: garage
-  friendly_name: Small Garage Door
+  friendly_name: Single Garage Door
+
+cover.patio_door:
+  device_class: door
+  friendly_name: Patio Door
+
+cover.garage_entrance_door:
+  device_class: door
+  friendly_name: Garage Entrance Door
 
 cover.front_door:
   device_class: door

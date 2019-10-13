@@ -9,6 +9,8 @@ homeassistant:
   #auth_providers:
   #- type: legacy_api_password
 
+mobile_app:
+
 weather:
   - platform: darksky
     api_key: !secret darksky_api_key

@@ -2,6 +2,7 @@
   name: "Outdoor Temperature"
   state_topic: "tele/OutdoorTemp/SENSOR"
   unit_of_measurement: "°F"
+  # {"Time":"2019-10-13T12:52:12","AM2301":{"Temperature":76.3,"Humidity":60.1},"TempUnit":"F"}
   value_template: "{{ value_json.AM2301.Temperature }}"
 
 - platform: mqtt
