@@ -1,8 +1,7 @@
 - platform: mqtt
   name: "Garage Door"
-  state_topic: "stat/alarmsensors/STATUS10"
-  # {"StatusSNS":{"Time":"2019-10-13T18:53:50","Switch1":"OFF","Switch2":"ON","Switch3":"OFF"}}
-  value_template: "{{value_json.StatusSNS.Switch1 }}"
+  state_topic: "tele/alarmsensors/SENSOR"
+  value_template: "{{value_json.Switch1 }}"
   command_topic: "cmnd/garage/POWER"
   payload_open: "ON"
   payload_close: "OFF"
@@ -23,30 +22,32 @@
 
 - platform: mqtt
   name: "Patio Door"
-  state_topic: "stat/alarmsensors/STATUS10"
-  value_template: "{{value_json.StatusSNS.Switch5 }}"
+  state_topic: "tele/alarmsensors/SENSOR"
+  value_template: "{{value_json.Switch5 }}"
   state_open: "OFF"
   state_closed: "ON"
   optimistic: false
 
 - platform: mqtt
   name: "Garage Entrance Door"
-  state_topic: "stat/alarmsensors/STATUS10"
-  value_template: "{{value_json.StatusSNS.Switch6 }}"
+  state_topic: "tele/alarmsensors/SENSOR"
+  value_template: "{{value_json.Switch6 }}"
   state_open: "OFF"
   state_closed: "ON"
   optimistic: false
 
 - platform: mqtt
   name: "Sensor 8"
-  state_topic: "stat/alarmsensors/STATUS10"
-  value_template: "{{value_json.StatusSNS.Switch8 }}"
+  state_topic: "tele/alarmsensors/SENSOR"
+  value_template: "{{value_json.Switch8 }}"
   state_open: "OFF"
   state_closed: "ON"
   optimistic: false
 
   #- platform: mqtt
   #name: "A Door"
+  #state_topic: "tele/alarmsensors/SENSOR"
+  #value_template: "{{value_json.Switch1 }}"
   #state_topic: "stat/alarmsensors/STATUS10"
   #value_template: "{{value_json.StatusSNS.Switch1 }}"
   #state_open: "OFF"
