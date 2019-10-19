@@ -138,3 +138,10 @@ zwave:
     #value: "http://{{ variable.var_docker_ip.value }}:{{ variable.var_configurator_port.value }}"
     #var_dockermon_ha:
     #value: "http://{{ variable.var_docker_ip.state }}:{{ variable.var_dockermon_port.state }}/container/ha"
+    #
+ecovacs:
+  username: !secret deebot_user
+  password: !secret deebot_pw
+  country: !secret deebot_country
+  continent: !secret deebot_continent
+

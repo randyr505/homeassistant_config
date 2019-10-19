@@ -7,6 +7,33 @@ views:
   - icon: mdi:home-assistant
     title: Home
     cards:
+      - type: glance
+        title: Doors
+        entities:
+          - cover.garage_door
+          - cover.single_garage_door
+          - cover.patio_door
+          - cover.garage_entrance_door
+
+      - type: glance
+        title: Outside Conditions
+        entities:
+          - sensor.outdoor_temperature
+          - sensor.outdoor_humidity
+          - sensor.weather
+
+      - type: glance
+        title: Vacuum
+        entities:
+          - sensor.vacuum_filter
+          - vacuum.robo_vac
+
+      - type: glance
+        title: Kitchen
+        entities:
+          - switch.kitchen_island
+          - switch.kitchen_spot
+
       - type: entities
         title: Sprinklers
         show_header_toggle: true
@@ -20,28 +47,6 @@ views:
           - switch.right_back_yard
           - switch.back_yard_left
           - switch.left_middle_back_yard
-
-      - type: glance
-        title: Outside Conditions
-        entities:
-          - sensor.outdoor_temperature
-          - sensor.outdoor_humidity
-          - sensor.weather
-
-      - type: glance
-        title: Doors
-        entities:
-          - cover.garage_door
-          - cover.single_garage_door
-          - cover.patio_door
-          - cover.garage_entrance_door
-
-      - type: glance
-        title: Kitchen
-        entities:
-          - switch.kitchen_island
-          - switch.kitchen_spot
-
 
       - type: entities
         title: Containers

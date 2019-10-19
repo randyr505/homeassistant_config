@@ -16,3 +16,10 @@
   api_key: !secret openweather_api_key
   monitored_conditions:
     - weather
+
+- platform: template
+  sensors:
+    vacuum_filter:
+      friendly_name: "Vacuum Filter Remaining"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('vacuum.robo_vac', 'component_filter') }}"
