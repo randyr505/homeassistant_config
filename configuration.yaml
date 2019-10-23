@@ -107,8 +107,8 @@ rachio:
 zwave:
   usb_path: /dev/ttyACM0
   debug: true
-  network_key: !secret zwave_network_key
-  device_config: !include zwave_device_config.yaml
+  #network_key: !secret zwave_network_key
+  #device_config: !include zwave_device_config.yaml
 
 # Variables
 #variable:
@@ -145,3 +145,8 @@ ecovacs:
   country: !secret deebot_country
   continent: !secret deebot_continent
 
+device_tracker:
+  - platform: tplink
+    host: 192.168.86.1
+    username: !secret tplink_user
+    password: !secret tplink_pw

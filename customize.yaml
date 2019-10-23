@@ -68,3 +68,9 @@ switch.netdata_container:
 
 switch.tileboard_container:
     friendly_name: TileBoard
+
+switch.outdoor_plug:
+  friendly_name: Outdoor Plug
+
+zwave.jasco_products_12722_on_off_relay_switch:
+  friendly_name: Living Room Light

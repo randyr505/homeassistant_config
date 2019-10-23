@@ -49,6 +49,12 @@ views:
           - switch.left_middle_back_yard
 
       - type: entities
+        title: Z-Wave
+        entities:
+          - zwave.aeon_labs_zw090_z_stick_gen5_us
+          - zwave.jasco_products_12722_on_off_relay_switch
+
+      - type: entities
         title: Containers
         entities:
           - entity: switch.ha_container
@@ -80,6 +86,10 @@ views:
     path: Outside
     theme: dark-mode
     cards:
+      - type: glance
+        title: Outside Plugs
+        entities:
+          - switch.outdoor_plug
       - type: glance
         title: Outside Conditions
         entities:
