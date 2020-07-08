@@ -11,3 +11,20 @@
       payload: 'OFF'
       topic: cmnd/garage/POWER
     service: mqtt.publish
+
+- action:
+  - data:
+      entity_id: switch.kitchen_spot_light
+    service: switch.toggle
+  alias: Multi Switch Spot Light
+  condition: []
+  id: '0'
+  trigger:
+  - entity_id: switch.kitchen_spot_light_alt
+    from: 'on'
+    platform: state
+    to: 'off'
+  - entity_id: switch.kitchen_spot_light_alt
+    from: 'off'
+    platform: state
+    to: 'on'

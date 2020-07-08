@@ -1,3 +1,8 @@
-  - platform: generic
-    name: Weather Radar
-    still_image_url: !secret radar_image_url
+- platform: generic
+  name: Weather Radar
+  still_image_url: !secret radar_image_url
+
+- platform: generic
+  name: Deebot_live_map
+  still_image_url: !secret deebot_image_url
+  verify_ssl: false

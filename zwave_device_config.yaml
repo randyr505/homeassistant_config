@@ -1,0 +1,4 @@
+light.living_room_light: 
+  polling_intensity: 1
+switch.living_room_light:
+  polling_intensity: 1

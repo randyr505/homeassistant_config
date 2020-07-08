@@ -20,11 +20,13 @@ weather:
 
 # Enables the frontend
 frontend:
-  #themes: !include_dir_merger_named themes/
+  themes: !include_dir_merge_named themes
 
 # Enables configuration UI
 config:
 
+lovelace:
+  mode: yaml
 
 logger:
   default: info
@@ -36,12 +38,10 @@ logger:
 # the developers to assist with development of Home Assistant.
 # For more information, please see:
 # https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
-updater:
+# updater:
 
 # Discover some devices automatically
 discovery:
-  ignore:
-    - directv
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -58,8 +58,6 @@ map:
 # Track the sun
 sun:
 
-lovelace:
-  mode: yaml
 
 # Includes
 automation: !include automation.yaml
@@ -71,7 +69,6 @@ panel_iframe: !include panel_iframe.yaml
 script: !include script.yaml
 sensor: !include sensor.yaml
 switch: !include switch.yaml
-
 
 # Text to speech
 tts:
@@ -107,8 +104,27 @@ rachio:
 zwave:
   usb_path: /dev/ttyACM0
   debug: true
-  #network_key: !secret zwave_network_key
-  #device_config: !include zwave_device_config.yaml
+  network_key: !secret zwave_network_key
+  device_config: !include zwave_device_config.yaml
+  #device_config:
+  #switch.living_room_light:
+  #polling_intensity: 1
+  #light.kitchen_light:
+  #polling_intensity: 1
+  #switch.kitchen_light:
+  #polling_intensity: 1
+      #zwave.jasco_products_12722_on_off_relay_switch:
+      #polling_intensity: 1
+      #zwave.jasco_products_14294_in_wall_smart_dimmer:
+      #polling_intensity: 1
+      #switch.jasco_products_12722_on_off_relay_switch:
+      #polling_intensity: 1
+      #switch.jasco_products_14294_in_wall_smart_dimmer:
+      #polling_intensity: 1
+      #light.jasco_products_12722_on_off_relay_switch:
+      #polling_intensity: 1
+      #light.jasco_products_14294_in_wall_smart_dimmer:
+      #polling_intensity: 1
 
 # Variables
 #variable:
@@ -139,14 +155,44 @@ zwave:
     #var_dockermon_ha:
     #value: "http://{{ variable.var_docker_ip.state }}:{{ variable.var_dockermon_port.state }}/container/ha"
     #
-ecovacs:
-  username: !secret deebot_user
-  password: !secret deebot_pw
-  country: !secret deebot_country
-  continent: !secret deebot_continent
+vacuum:
+  - platform: deebot
+    username: !secret deebot_user
+    password: !secret deebot_pw
+    country: !secret deebot_country
+    continent: !secret deebot_continent
+    deviceid: !secret deebot_sn
+    # Optional
+    live_map: True
+    show_color_rooms: False
+    livemappath: 'images/vac_live_map.png'
 
-device_tracker:
-  - platform: tplink
-    host: 192.168.86.1
-    username: !secret tplink_user
-    password: !secret tplink_pw
+  #device_tracker:
+  #- platform: tplink
+  #host: 192.168.86.1
+  #username: !secret tplink_user
+  #password: !secret tplink_pw
+
+google_assistant:
+  project_id: hass-de864
+  exposed_domains:
+    - switch
+    - light
+  entity_config:
+    switch.kitchen:
+      name: jarvis
+      aliases:
+        - BRIGHT_LIGHTS
+        - ENTRY_LIGHTS
+    light.living_room:
+      expose: false
+      room: LIVING_ROOM
+    group.all_automations:
+      expose: false
+
+speedtestdotnet:
+  scan_interval:
+    minutes: 30
+  monitored_conditions:
+    - download
+    - upload

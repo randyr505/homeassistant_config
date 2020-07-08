@@ -1,6 +1,5 @@
   weather_view:
     name: Weather
-    view: yes
     icon: mdi:weather-pouring
     entities:
       - sensor.outdoor_temperature
@@ -10,8 +9,6 @@
 
   doors_view:
     name: Doors
-    view: yes
-    control: hidden
     entities:
       - cover.garage_door
       - cover.single_garage_door
@@ -21,19 +18,16 @@
 
   kitchen_view:
     name: Kitchen
-    view: yes
     icon: mdi:food-fork-drink
     entities:
-      - media_player.kitchen_home
-      - switch.kitchen_island
-      - switch.kitchen_spot
+      - media_player.kitchen_display
+      - switch.kitchen_spot_light
 
   LivingRoom_view:
     icon: mdi:television-classic
     name: Living Room
-    view: yes
     entities:
-      - media_player.lr
-      - media_player.master_bedroom_speaker
-      - media_player.office_speaker
-      - media_player.bose
+      - media_player.living_room
+      - media_player.bose_soundbar
+      - switch.living_room_light
+      - light.living_room_light

@@ -1,0 +1,51 @@
+  - platform: tplink
+    name: "Outdoor Plug"
+    host: !secret outdoor_plug_ip
+
+  - platform: zwave
+    name: "Living Room Light"
+
+  - platform: mqtt
+    name: "Office Light"
+    command_topic: "cmnd/office_light/power"
+    state_topic: "stat/office_light/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Bar Light"
+    command_topic: "cmnd/bar_light/power"
+    state_topic: "stat/bar_light/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Kitchen Island"
+    command_topic: "cmnd/kitchen_island/power"
+    state_topic: "stat/kitchen_island/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Kitchen Spot Light"
+    command_topic: "cmnd/kitchen_spot_light/power"
+    state_topic: "stat/kitchen_spot_light/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Kitchen Spot Light Alt"
+    command_topic: "cmnd/kitchen_spot_light_alt/power"
+    state_topic: "stat/kitchen_spot_light_alt/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true

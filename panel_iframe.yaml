@@ -3,11 +3,6 @@ tasmoadmin:
   icon: mdi:home-automation
   url:  !secret tasmoadmin_url
 
-configurator:
-  title: Configurator
-  icon: mdi:wrench
-  url:  !secret configurator_url
- 
 dockermon:
   title: DockerMon
   icon: mdi:home-automation
@@ -23,6 +18,11 @@ influxdb:
   icon: mdi:home-automation
   url:  !secret influxdb_url
 
+netdata:
+  title: NetData
+  icon: mdi:home-automation
+  url:  !secret netdata_url
+
   #tileboard:
   #title: TileBoard
   #icon: mdi:home-automation
@@ -33,7 +33,7 @@ rachio:
   url: "https://app.rach.io"
   icon: mdi:water-pump
 
-nodered:
-  title: 'Node-Red'
-  icon: mdi:nodejs
-  url:  !secret nodered_url
+  #nodered:
+  #title: 'Node-Red'
+  #icon: mdi:nodejs
+  #url:  !secret nodered_url

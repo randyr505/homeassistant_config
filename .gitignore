@@ -6,10 +6,12 @@
 *.log
 *.sqlite
 *.xml
+*.html
 OZW_Log.txt
+custom_components
 deps
 harmony*
+images
 ip_bans.yaml
 secrets.yaml
-switch.yaml
 tts

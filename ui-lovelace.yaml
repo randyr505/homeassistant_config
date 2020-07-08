@@ -20,19 +20,31 @@ views:
         entities:
           - sensor.outdoor_temperature
           - sensor.outdoor_humidity
-          - sensor.weather
+          - sensor.forecast_condition
+
+            #- type: picture-entity
+            #entity: vacuum.robo_vac_2
+            #aspect_ratio: 50%
+            #camera_image: camera.deebot_live_map
 
       - type: glance
-        title: Vacuum
-        entities:
-          - sensor.vacuum_filter
-          - vacuum.robo_vac
-
-      - type: glance
-        title: Kitchen
+        title: Lights
         entities:
           - switch.kitchen_island
-          - switch.kitchen_spot
+          - switch.kitchen_spot_light
+          - switch.bar_light
+          - switch.office_light
+          - switch.living_room_light
+          - light.living_room_light
+
+      - type: glance
+        title: Media
+        entities:
+          - media_player.deestv
+          - media_player.kitchen_display
+          - media_player.kitchen_home
+          - media_player.office
+          - media_player.bose_soundbar
 
       - type: entities
         title: Sprinklers
@@ -48,38 +60,12 @@ views:
           - switch.back_yard_left
           - switch.left_middle_back_yard
 
-      - type: entities
-        title: Z-Wave
-        entities:
-          - zwave.aeon_labs_zw090_z_stick_gen5_us
-          - zwave.jasco_products_12722_on_off_relay_switch
-
-      - type: entities
-        title: Containers
-        entities:
-          - entity: switch.ha_container
-            name: HA
-          - entity: switch.mqtt_container
-            name: MQTT
-          - entity: switch.influxdb_container
-            name: Influxdb
-          - entity: switch.tasmoadmin_container
-            name: Tasmoadmin
-          - entity: switch.grafana_container
-            name: Grafana
-          - entity: switch.netdata_container
-            name: Netdata
-        state_filter:
-          - "on"
-
-      - type: glance
-        title: Media
-        entities:
-          - media_player.kitchen_home
-          - media_player.lr
-          - media_player.master_bedroom_speaker
-          - media_player.office_speaker
-          - media_player.bose
+            #- type: glance
+            #icon: mdi:weather-pouring
+            #title: Weather
+            #entities:
+            #- weather.dark_sky
+            #- weather.openweathermap
 
   # Outside
   - title: Outside
@@ -95,7 +81,7 @@ views:
         entities:
           - sensor.outdoor_temperature
           - sensor.outdoor_humidity
-          - sensor.weather
+          - sensor.forecast_condition
 
       - type: picture-entity
         entity: camera.weather_radar
@@ -105,7 +91,7 @@ views:
     title: Weather
     cards:
       - type: weather-forecast
-        entity: weather.darksky
+        entity: weather.dark_sky
       - type: weather-forecast
         entity: weather.openweathermap
 

@@ -1,76 +1,41 @@
 media_player.master_bedroom_speaker:
   friendly_name: MBR Google Home
-
-media_player.office_speaker:
+media_player.office:
   friendly_name: Office Google Home
-
-media_player.lr:
-  friendly_name: LR DirecTV
-
 media_player.kitchen_home:
-  friendly_name: Kitchen Google Home
-
-media_player.bose:
+  friendly_name: Master Bedroom Home
+media_player.bose_soundbar:
   friendly_name: Bose Soundbar
-
 cover.garage_door:
   device_class: garage
   friendly_name: Garage Door
-
 cover.single_garage_door:
   device_class: garage
   friendly_name: Single Garage Door
-
 cover.patio_door:
   device_class: door
   friendly_name: Patio Door
-
 cover.garage_entrance_door:
   device_class: door
   friendly_name: Garage Entrance Door
-
 cover.front_door:
   device_class: door
   friendly_name: Front Door
-
 sensor.outdoor_temperature:
   friendly_name: Outdoor Temperature
-
 sensor.outdoor_humidity:
   friendly_name: Outdoor Humidity
-
 sensor.forecast:
   friendly_name: Forecast
-
+switch.kitchen_spot_light:
+  friendly_name: Kitchen Spot Light
 switch.kitchen_island:
-    friendly_name: Kitchen Island
-
-switch.kitchen_spot:
-    friendly_name: Kitchen Spot
-
-switch.ha_container:
-    friendly_name: HA
-
-switch.mqtt_container:
-    friendly_name: MQTT
-
-switch.grafana_container:
-    friendly_name: Grafana
-
-switch.influxdb_container:
-    friendly_name: InfluxDB
-
-switch.tasmoadmin_container:
-    friendly_name: TasmoAdmin
-
-switch.netdata_container:
-    friendly_name: NetData
-
-switch.tileboard_container:
-    friendly_name: TileBoard
-
+  friendly_name: Kitchen Island
+switch.bar_light:
+  friendly_name: Bar Light
+switch.office_light:
+  friendly_name: Office Light
 switch.outdoor_plug:
   friendly_name: Outdoor Plug
-
-zwave.jasco_products_12722_on_off_relay_switch:
+switch.jasco_products_12722_on_off_relay_switch_switch:
   friendly_name: Living Room Light
