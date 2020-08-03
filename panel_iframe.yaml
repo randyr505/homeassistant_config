@@ -23,17 +23,12 @@ netdata:
   icon: mdi:home-automation
   url:  !secret netdata_url
 
-  #tileboard:
-  #title: TileBoard
-  #icon: mdi:home-automation
-  #url:  !secret tileboard_url
-
 rachio:
   title: Rachio
   url: "https://app.rach.io"
   icon: mdi:water-pump
 
-  #nodered:
-  #title: 'Node-Red'
-  #icon: mdi:nodejs
-  #url:  !secret nodered_url
+nodered:
+  title: 'Node-Red'
+  icon: mdi:nodejs
+  url:  !secret nodered_url

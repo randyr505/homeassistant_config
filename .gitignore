@@ -1,7 +1,9 @@
 .DS_Store
 .HA_VERSION
-.uuid
+.pip_progress
 .storage
+.swp
+.uuid
 *.db*
 *.log
 *.sqlite
